@@ -4,12 +4,17 @@ const checkNumberButton = document.getElementById("check-number");
 const outputBox = document.getElementById("output-box");
 
 function checkBirthDateIsLucky(){
-    const dob = dateOfBirth.value;
-    const sum = calculateSum(dob);
-    if(sum&&dob){
-    compareValues(sum, luckyNumber.value);
-    }else{
-        outputBox.innerText = "Please enter valid input";
+    if(luckyNumber.value>0){
+        const dob = dateOfBirth.value;
+        const sum = calculateSum(dob);
+        if(sum&&dob){
+        compareValues(sum, luckyNumber.value);
+        }else{
+            outputBox.innerText = "Please enter valid input";
+        }
+    }
+    else{
+        outputBox.innerText="Enter input greater than 0";
     }
 }
 
